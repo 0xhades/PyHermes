@@ -446,14 +446,14 @@ class account:
                 printc('Logged In Successfully', colors.GREEN2)
             else: printc('Login failure, try again', colors.GREEN2); exit()
 
-        elif("Incorrect Username") in response.text:
+        elif 'Incorrect Username' in response.text:
             printc("The username you entered doesn't appear to belong to an account. Please check your username and try again.", colors.RED)
             exit()
-        elif('Incorrect password') in response.text:
-            printc("The password you entered is incorrect. Please try again.", colors.RED)
-            exit()
-        elif ('inactive user') in response.text:
+        elif  'active user' in response.text:
             printc('Your account has been disabled for violating our terms. Learn how you may be able to restore your account.', colors.RED)
+            exit()
+        elif 'Incorrect password' in response.text:
+            printc("The password you entered is incorrect. Please try again.", colors.RED)
             exit()
         else:
             printc(f'Unknown error: {response.text}', colors.RED)
