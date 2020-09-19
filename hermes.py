@@ -588,9 +588,8 @@ if __name__ == '__main__':
                     acc.cookies,
                     target
                 )
-            t = threading.Thread(target=runner.hermes, daemon=True)
+            t = threading.Thread(target=runner.hermes)
             threads.append(t)
-            time.sleep(0.01)
             t.start()
 
         message = f'Hunting: @{target}\nThreads: {ThreadPerMoment}'
