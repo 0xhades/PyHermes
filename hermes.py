@@ -566,7 +566,6 @@ if __name__ == '__main__':
     target = inputc('Target: ', colors.GREEN)
     print()
     acc.target = target
-    printc(f'If you add processes, it\'ll make it faster, doubling the power', colors.YELLOW)
     ThreadPerMoment = (int(inputc('Threads: ', colors.GREEN)))
 
     ClearConsole()
