@@ -591,6 +591,7 @@ if __name__ == '__main__':
                 )
             t = threading.Thread(target=runner.hermes, daemon=True)
             threads.append(t)
+            time.sleep(0.01)
             t.start()
 
         message = f'Hunting: @{target}\nThreads: {ThreadPerMoment}'
