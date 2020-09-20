@@ -88,7 +88,6 @@ def parseRequest(host: str, path: str, method: str, headers: dict, data=None, ra
 
     method = method.upper()
     rawRequest = f'{method} {path} HTTP/1.1\r\n'
-
     if method == "GET" and (data != None or rawData != ''):
         rawQuery = ''
         if rawData != "":
