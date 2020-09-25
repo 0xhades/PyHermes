@@ -157,8 +157,8 @@ class account:
         self.username = username
         self.password = password
         self.cookies = dict()
-        self.csrftoken = self.fheaders['csrftoken']
-        self.mid = self.fheaders['mid']
+        self.csrftoken = ''#self.fheaders['csrftoken']
+        self.mid = ''#self.fheaders['mid']
         self.profile = {}
         self.UserAgent = self.randDevice().replace('(VERSION)', version)
         self.DeviceID = self.generate_device_id(self.hex_digest(username, password))
@@ -390,7 +390,7 @@ class account:
         payload = {}
         payload['signed_body'] = f'SIGNATURE.{json.dumps(data)}'
 
-        response = requests.post('https://i.instagram.com/api/v1/accounts/login/', headers=self.headers, cookies=self.fheaders, data=payload, verify=True)
+        response = requests.post('https://i.instagram.com/api/v1/accounts/login/', headers=self.headers, data=payload, verify=True)
         if 'logged_in_user' in response.text:
             self.loggedIn = True
             self.cookies = response.cookies.get_dict()
